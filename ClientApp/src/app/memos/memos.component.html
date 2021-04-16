@@ -1,0 +1,14 @@
+<ul class="memos">
+  <li *ngFor="let memo of memos"
+      [class.selected]="hero === selectedHero" (click)="onSelect(memo)">
+    <span class="badge"><b>{{memo.id}}</b> {{memo.date}}</span>{{memo.title}}
+  </li>
+</ul>
+<div *ngIf="selectedMemo">
+  <h2>{{selectedMemo.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedMemo.id}}</div>
+  <div>
+    <label for="memo-title">Memo title: </label>
+    <input id="memo-title" [(ngModel)]="selectedMemo.name" placeholder="Title">
+  </div>
+</div>
