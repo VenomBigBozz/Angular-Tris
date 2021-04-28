@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MemosComponent } from './memos/memos.component';
+import { MemoDetailComponent } from './memo-detail/memo-detail.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MemosComponent } from './memos/memos.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    MemosComponent
+    MemosComponent,
+    MemoDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
