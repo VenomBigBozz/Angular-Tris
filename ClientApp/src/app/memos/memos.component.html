@@ -1,7 +1,0 @@
-<ul class="memos">
-  <li *ngFor="let memo of memos"
-      [class.selected]="memo === selectedMemo" (click)="onSelect(memo)">
-    <span class="badge"><b>{{memo.id}}</b> {{memo.date}}</span>{{memo.title}}
-  </li>
-</ul>
-<app-memo-detail [memo]="selectedMemo"></app-memo-detail>
