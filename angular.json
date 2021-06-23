@@ -126,6 +126,10 @@
               "devServerTarget": "ng-tris-game:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

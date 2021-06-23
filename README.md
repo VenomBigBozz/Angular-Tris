@@ -1,5 +1,7 @@
 # NgTrisGame
 
+You can find a deployed version of thi app [Here](ng-tris-game-web-app).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
 ## Development server
