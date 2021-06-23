@@ -9,12 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { GaugeModule } from 'angular-gauge';
 import { MatTabsModule } from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SquareComponent } from './components/square/square.component';
 import { BoardComponent } from './components/board/board.component';
+import { NbThemeModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [AppComponent, TopbarComponent, SquareComponent, BoardComponent],
@@ -28,6 +29,10 @@ import { BoardComponent } from './components/board/board.component';
     MatFormFieldModule,
     MatSelectModule,
     MatTabsModule,
+    NbThemeModule.forRoot({ name: 'dark' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
