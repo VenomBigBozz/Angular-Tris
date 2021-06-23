@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { TopbarComponent } from './components/topbar/topbar.component';
 import { SquareComponent } from './components/square/square.component';
 import { BoardComponent } from './components/board/board.component';
 import { NbThemeModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
@@ -19,7 +18,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, TopbarComponent, SquareComponent, BoardComponent],
+  declarations: [AppComponent, SquareComponent, BoardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
