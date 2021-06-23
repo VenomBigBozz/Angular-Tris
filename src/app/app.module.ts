@@ -13,9 +13,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { TopbarComponent } from './components/topbar/topbar.component';
+import { SquareComponent } from './components/square/square.component';
+import { BoardComponent } from './components/board/board.component';
 
 @NgModule({
-  declarations: [AppComponent, TopbarComponent],
+  declarations: [AppComponent, TopbarComponent, SquareComponent, BoardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
