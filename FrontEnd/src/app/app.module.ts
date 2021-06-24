@@ -11,6 +11,7 @@ import {
   NbLayoutModule,
   NbButtonModule,
   NbActionsModule,
+  NbPopoverModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -38,6 +39,7 @@ import { BoardComponent } from './components/game-view/board/board.component';
     NbEvaIconsModule,
     NbActionsModule,
     NbButtonModule,
+    NbPopoverModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -3,19 +3,29 @@
     <!-- Insert header here -->
 
     <nb-actions size="medium" fullWidth>
-      <nb-action icon="plus-square"></nb-action>
-      <nb-action icon="archive-outline"></nb-action>
+      <nb-action
+        icon="plus-square"
+        nbPopover="Play"
+        nbPopoverTrigger="hover"
+        nbPopoverPlacement="bottom"
+      ></nb-action>
+      <nb-action
+        icon="archive-outline"
+        nbPopover="match history"
+        nbPopoverTrigger="hover"
+        nbPopoverPlacement="bottom"
+      ></nb-action>
       <nb-action
         icon="github-outline"
+        nbPopover="Github"
+        nbPopoverTrigger="hover"
+        nbPopoverPlacement="bottom"
         (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
       ></nb-action>
     </nb-actions>
   </nb-layout-header>
 
   <nb-layout-column>
-
     <router-outlet></router-outlet>
-
   </nb-layout-column>
-
 </nb-layout>
