@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +13,7 @@ export class BoardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.newGame();
+    // this.newGame();
   }
 
   newGame(): void {
@@ -46,6 +45,7 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6],
     ];
+    let filled = null;
     for (let [a, b, c] of lines) {
       if (
         this.squares[a] &&
@@ -55,6 +55,9 @@ export class BoardComponent implements OnInit {
         return this.squares[a];
       }
     }
-    return null;
+    this.squares.forEach((element) => {
+      filled = element ? filled + 1 : filled;
+    });
+    return filled >= 9 ? 'tie' : null;
   }
 }

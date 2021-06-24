@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { SquareComponent } from './components/square/square.component';
-import { BoardComponent } from './components/board/board.component';
+import { SquareComponent } from './components/game-view/square/square.component';
+import { BoardComponent } from './components/game-view/board/board.component';
 import { NbThemeModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbActionsModule } from '@nebular/theme';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { GameViewComponent } from './components/game-view/game-view.component';
@@ -24,6 +25,7 @@ import { GameViewComponent } from './components/game-view/game-view.component';
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
+    NbActionsModule,
     NbButtonModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
