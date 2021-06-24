@@ -12,9 +12,10 @@ import { NbThemeModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { GameViewComponent } from './components/game-view/game-view.component';
 
 @NgModule({
-  declarations: [AppComponent, SquareComponent, BoardComponent],
+  declarations: [AppComponent, SquareComponent, BoardComponent, GameViewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
