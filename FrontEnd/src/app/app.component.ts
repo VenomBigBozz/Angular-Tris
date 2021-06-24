@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   titrle = 'tris';
+
+  goToLink(url: string) {
+    window.open(url, '_blank');
+  }
 }
