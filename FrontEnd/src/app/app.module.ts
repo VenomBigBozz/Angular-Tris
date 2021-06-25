@@ -19,7 +19,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import { GameViewComponent } from './components/game-view/game-view.component';
-import { SquareComponent } from './components/game-view/square/square.component';
+import { SquareComponent } from './components/game-view/board/square/square.component';
 import { BoardComponent } from './components/game-view/board/board.component';
 
 @NgModule({
@@ -41,7 +41,7 @@ import { BoardComponent } from './components/game-view/board/board.component';
     NbButtonModule,
     NbPopoverModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
+      enabled: true,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
