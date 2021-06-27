@@ -1,5 +1,5 @@
-<button nbButton *ngIf="!value">{{ value }}</button>
-<button nbButton hero status="success" *ngIf="value == 'X'">
+<button mat-flat-button *ngIf="!value">{{ value }}</button>
+<button mat-flat-button color="warn" *ngIf="value == 'X'">
   {{ value }}
 </button>
-<button nbButton hero status="info" *ngIf="value == 'O'">{{ value }}</button>
+<button mat-flat-button color="accent" *ngIf="value == 'O'">{{ value }}</button>

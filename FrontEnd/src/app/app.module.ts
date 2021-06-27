@@ -15,6 +15,10 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
+import { MatRippleModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
+
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -34,12 +38,17 @@ import { BoardComponent } from './components/game-view/board/board.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbActionsModule,
     NbButtonModule,
     NbPopoverModule,
+
+    MatRippleModule,
+    MatButtonModule,
+
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: true,
       // Register the ServiceWorker as soon as the app is stable

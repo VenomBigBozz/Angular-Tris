@@ -56,7 +56,7 @@ export class BoardComponent implements OnInit {
       }
     }
     this.squares.forEach((element) => {
-      filled = element ? filled + 1 : filled;
+      filled += element ? 1 : 0;
     });
     return filled >= 9 ? 'tie' : null;
   }
