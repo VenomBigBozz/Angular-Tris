@@ -25,6 +25,8 @@ import { environment } from '../environments/environment';
 import { GameViewComponent } from './components/game-view/game-view.component';
 import { SquareComponent } from './components/game-view/board/square/square.component';
 import { BoardComponent } from './components/game-view/board/board.component';
+import { TopViewComponent } from './components/top-view/top-view.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,20 +34,22 @@ import { BoardComponent } from './components/game-view/board/board.component';
     SquareComponent,
     BoardComponent,
     GameViewComponent,
+    TopViewComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    // Nebular
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbActionsModule,
     NbButtonModule,
     NbPopoverModule,
-
+    // Angular/material
     MatRippleModule,
     MatButtonModule,
 
