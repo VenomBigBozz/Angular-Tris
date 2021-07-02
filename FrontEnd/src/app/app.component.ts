@@ -8,8 +8,4 @@ import { RouterLink } from '@angular/router';
 })
 export class AppComponent {
   title = 'tris';
-
-  goToLink(url: string, blank: boolean): void {
-    blank ? window.open(url, '_blank') : (location.href = url);
-  }
 }

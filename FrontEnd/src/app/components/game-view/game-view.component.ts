@@ -7,13 +7,13 @@ import { Component, Directive, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./game-view.component.scss'],
 })
 export class GameViewComponent implements OnInit {
-
   @ViewChild(BoardComponent) child: BoardComponent;
 
   constructor() {}
 
   ngOnInit(): void {}
-  newGame() {
+
+  newGame(): void {
     this.child.newGame();
   }
 }

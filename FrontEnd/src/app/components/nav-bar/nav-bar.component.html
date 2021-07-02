@@ -1,0 +1,23 @@
+<nb-actions size="medium">
+  <nb-action
+    icon="plus-square"
+    nbPopover="New Game"
+    nbPopoverTrigger="hover"
+    nbPopoverPlacement="bottom"
+    (click)="goToLink('/game', false)"
+  ></nb-action>
+  <nb-action
+    icon="archive-outline"
+    nbPopover="Match History"
+    nbPopoverTrigger="hover"
+    nbPopoverPlacement="bottom"
+    (click)="goToLink('/top', false)"
+  ></nb-action>
+  <nb-action
+    icon="github-outline"
+    nbPopover="Github"
+    nbPopoverTrigger="hover"
+    nbPopoverPlacement="bottom"
+    (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris', true)"
+  ></nb-action>
+</nb-actions>

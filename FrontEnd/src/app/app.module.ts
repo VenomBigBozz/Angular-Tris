@@ -27,6 +27,7 @@ import { SquareComponent } from './components/game-view/board/square/square.comp
 import { BoardComponent } from './components/game-view/board/board.component';
 import { TopViewComponent } from './components/top-view/top-view.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     GameViewComponent,
     TopViewComponent,
     PageNotFoundComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
