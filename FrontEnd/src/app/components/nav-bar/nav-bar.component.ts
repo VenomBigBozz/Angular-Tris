@@ -12,8 +12,8 @@ export class NavBarComponent implements OnInit {
   githubIcon: string;
 
   constructor(private router: Router) {
-    this.router.events.subscribe((ev) => {
-      if (ev instanceof NavigationEnd) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
         this.iconChange(this.router.url);
       }
     });
