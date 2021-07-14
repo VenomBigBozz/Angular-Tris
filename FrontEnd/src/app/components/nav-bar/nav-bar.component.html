@@ -1,23 +1,25 @@
 <nb-actions size="medium">
   <nb-action
-    icon="plus-square"
-    nbPopover="New Game"
+    [icon]="gameIcon"
+    nbPopover="Game"
     nbPopoverTrigger="hover"
     nbPopoverPlacement="bottom"
-    (click)="goToLink('/game', false)"
+    routerLink="/game"
+    routerLinkActive="active"
   ></nb-action>
   <nb-action
-    icon="archive-outline"
+    [icon]="archiveIcon"
     nbPopover="Match History"
     nbPopoverTrigger="hover"
     nbPopoverPlacement="bottom"
-    (click)="goToLink('/top', false)"
+    routerLink="/top"
+    routerLinkActive="active"
   ></nb-action>
   <nb-action
-    icon="github-outline"
+    [icon]="githubIcon"
     nbPopover="Github"
     nbPopoverTrigger="hover"
     nbPopoverPlacement="bottom"
-    (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris', true)"
+    (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
   ></nb-action>
 </nb-actions>

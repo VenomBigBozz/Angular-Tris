@@ -1,5 +1,5 @@
 import { BoardComponent } from './board/board.component';
-import { Component, Directive, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-game-view',
@@ -7,13 +7,13 @@ import { Component, Directive, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./game-view.component.scss'],
 })
 export class GameViewComponent implements OnInit {
-  @ViewChild(BoardComponent) child: BoardComponent;
+  @ViewChild(BoardComponent) board: BoardComponent;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   newGame(): void {
-    this.child.newGame();
+    this.board.newGame();
   }
 }

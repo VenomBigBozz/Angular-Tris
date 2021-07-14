@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,11 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  constructor() {}
+  gameIcon: string;
+  archiveIcon: string;
+  githubIcon: string;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) {
+        this.iconChange(this.router.url);
+      }
+    });
+    this.githubIcon = 'github-outline';
+  }
 
   ngOnInit(): void {}
 
-  goToLink(url: string, blank: boolean): void {
-    blank ? window.open(url, '_blank') : (location.href = url);
+  goToLink(url: string): void {
+    window.open(url, '_blank');
+    this.iconChange(url);
+  }
+
+  iconChange(url: string): void {
+    switch (url) {
+      case '/game':
+        this.gameIcon = 'plus-square';
+        this.archiveIcon = 'archive-outline';
+        break;
+      case '/top':
+        this.gameIcon = 'plus-square-outline';
+        this.archiveIcon = 'archive';
+        break;
+    }
   }
 }

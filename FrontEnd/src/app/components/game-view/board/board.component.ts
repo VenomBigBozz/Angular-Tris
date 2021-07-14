@@ -10,11 +10,7 @@ export class BoardComponent implements OnInit {
   xIsNext: boolean;
   winner: string;
 
-  constructor() {}
-
-  ngOnInit(): void {
-    // this.newGame();
-  }
+  ngOnInit(): void {}
 
   newGame(): void {
     this.squares = Array(9).fill(null);
@@ -26,7 +22,7 @@ export class BoardComponent implements OnInit {
     return this.xIsNext ? 'X' : 'O';
   }
 
-  makeMove(idx: number): any {
+  makeMove(idx: number): void {
     if (!this.squares[idx] && !this.winner) {
       this.squares.splice(idx, 1, this.player);
       this.xIsNext = !this.xIsNext;
@@ -46,7 +42,7 @@ export class BoardComponent implements OnInit {
       [2, 4, 6],
     ];
     let filled = null;
-    for (let [a, b, c] of lines) {
+    for (const [a, b, c] of lines) {
       if (
         this.squares[a] &&
         this.squares[a] === this.squares[b] &&
