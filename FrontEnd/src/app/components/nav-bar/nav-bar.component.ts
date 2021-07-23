@@ -1,3 +1,7 @@
+import {
+  fadeInOnEnterAnimation,
+  fadeOutOnLeaveAnimation,
+} from 'angular-animations';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -5,6 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
+  animations: [fadeInOnEnterAnimation(), fadeOutOnLeaveAnimation()],
 })
 export class NavBarComponent implements OnInit {
   gameIcon: string;

@@ -7,4 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class SquareComponent {
   @Input() value: 'X' | 'O';
+
+  changeColor(): string {
+    switch (this.value) {
+      case 'X':
+        return 'yellow';
+
+      case 'O':
+        return 'cyan';
+
+      default:
+        return 'light-grey';
+    }
+  }
 }

@@ -3,3 +3,15 @@ button {
   height: 100%;
   font-size: 5em !important;
 }
+
+.mat-flat-button.yellow {
+  background-color: rgb(255, 191, 72);
+}
+
+.mat-flat-button.cyan {
+  background-color: rgb(78, 133, 235);
+}
+
+.mat-flat-button.light-grey {
+  background-color: lightgray;
+}

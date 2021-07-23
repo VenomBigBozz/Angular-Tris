@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+} from '@angular/core';
+import {
+  fadeInOnEnterAnimation,
+  fadeOutOnLeaveAnimation,
+} from 'angular-animations';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
+  animations: [fadeInOnEnterAnimation(), fadeOutOnLeaveAnimation()],
 })
 export class BoardComponent implements OnInit {
   squares: any[];
@@ -24,7 +32,7 @@ export class BoardComponent implements OnInit {
 
   makeMove(idx: number): void {
     if (!this.squares[idx] && !this.winner) {
-      this.squares.splice(idx, 1, this.player);
+      this.squares[idx] = this.player;
       this.xIsNext = !this.xIsNext;
     }
     this.winner = this.calculateWinner();
