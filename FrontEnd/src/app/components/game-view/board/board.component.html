@@ -1,8 +1,14 @@
-<h2 style="font-size: 20px" *ngIf="squares">Current Player: {{ player }}</h2>
+<div [@fadeOutOnLeave]>
+  <h1 style="font-size: 30px" *ngIf="squares && !winner" [@fadeInOnEnter]>
+    Current Player: {{ player }}
+  </h1>
 
-<h1 *ngIf="winner && winner != 'tie'">Player {{ winner }} won!</h1>
+  <h1 *ngIf="winner && winner != 'tie'" [@fadeInOnEnter]>
+    Player {{ winner }} won!
+  </h1>
 
-<h1 *ngIf="winner == 'tie'">That's a tie!</h1>
+  <h1 *ngIf="winner == 'tie'" [@fadeInOnEnter]>That's a tie!</h1>
+</div>
 
 <main>
   <app-square

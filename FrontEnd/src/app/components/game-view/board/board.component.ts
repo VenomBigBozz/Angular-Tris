@@ -1,7 +1,4 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   fadeInOnEnterAnimation,
   fadeOutOnLeaveAnimation,
@@ -11,7 +8,10 @@ import {
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
-  animations: [fadeInOnEnterAnimation(), fadeOutOnLeaveAnimation()],
+  animations: [
+    fadeInOnEnterAnimation(),
+    fadeOutOnLeaveAnimation({ duration: 250 }),
+  ],
 })
 export class BoardComponent implements OnInit {
   squares: any[];
