@@ -5,6 +5,27 @@ main {
 }
 
 app-square {
-  border: 1px solid rgb(27, 20, 51);
+  border: 1px solid rgb(41, 31, 77);
   height: 23vmin;
+}
+
+app-ripple-overlay {
+  border: 1px solid rgba(60, 0, 255, 0.205);
+  height: 23vmin;
+}
+
+.container {
+  position: relative;
+}
+
+.overlap {
+  position: absolute;
+}
+
+.ripple {
+  z-index: 100;
+}
+
+.board {
+  z-index: 1;
 }

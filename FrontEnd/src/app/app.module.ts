@@ -16,8 +16,7 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { MatRippleModule } from '@angular/material/core';
-import {MatButtonModule} from '@angular/material/button';
-
+import { MatButtonModule } from '@angular/material/button';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -28,6 +27,7 @@ import { BoardComponent } from './components/game-view/board/board.component';
 import { TopViewComponent } from './components/top-view/top-view.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RippleOverlayComponent } from './components/game-view/board/ripple-overlay/ripple-overlay.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     TopViewComponent,
     PageNotFoundComponent,
     NavBarComponent,
+    RippleOverlayComponent,
   ],
   imports: [
     BrowserModule,

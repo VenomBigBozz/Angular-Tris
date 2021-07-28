@@ -15,6 +15,7 @@ import {
 })
 export class BoardComponent implements OnInit {
   squares: any[];
+  squares2: any[];
   xIsNext: boolean;
   winner: string;
 
@@ -22,6 +23,7 @@ export class BoardComponent implements OnInit {
 
   newGame(): void {
     this.squares = Array(9).fill(null);
+    this.squares2 = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
   }
