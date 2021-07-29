@@ -1,26 +1,73 @@
 <!-- #region buttons-->
-<button
-  mat-icon-button
-  color="primary"
-  aria-label="Used to go in /game"
-  routerLink="/game"
-  routerLinkActive="active"
->
-  <mat-icon class="material-icons-outlined">sports_esports </mat-icon></button
-><button
-  mat-icon-button
-  color="primary"
-  aria-label="Used to go in /top"
-  routerLink="/top"
-  routerLinkActive="active"
->
-  <mat-icon class="material-icons-outlined">leaderboard </mat-icon></button
-><button
-  mat-icon-button
-  color="primary"
-  aria-label="Used to go in the github page"
-  (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
+<div class="button-row">
+  <div class="flex-container">
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Used to go in /game"
+      routerLink="/game"
+      routerLinkActive="active"
+    >
+      <div class="container">
+        <div class="overlap">
+          <mat-icon
+            *ngIf="gameIconFilled"
+            class="material-icons icon-x24"
+            [@fadeInOnEnter]
+            [@fadeOutOnLeave]
+            >sports_esports
+          </mat-icon>
+        </div>
 
-><!-- https://akveo.github.io/eva-icons/outline/svg/github-outline.svg -->
-  <mat-icon class="material-icons-outlined">sports_esports </mat-icon>
-</button>
+        <div class="overlap">
+          <mat-icon
+            *ngIf="!gameIconFilled"
+            class="material-icons-outlined icon-x24"
+            [@fadeInOnEnter]
+            [@fadeOutOnLeave]
+            >sports_esports
+          </mat-icon>
+        </div>
+      </div>
+    </button>
+    <mat-divider [vertical]="true"></mat-divider>
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Used to go in /top"
+      routerLink="/top"
+      routerLinkActive="active"
+    >
+      <div class="container">
+        <div class="overlap">
+          <mat-icon
+            *ngIf="leaderboardIconFilled"
+            class="material-icons icon-x24"
+            [@fadeInOnEnter]
+            [@fadeOutOnLeave]
+            >leaderboard
+          </mat-icon>
+        </div>
+
+        <div class="overlap">
+          <mat-icon
+            *ngIf="!leaderboardIconFilled"
+            class="material-icons-outlined icon-x24"
+            [@fadeInOnEnter]
+            [@fadeOutOnLeave]
+            >leaderboard
+          </mat-icon>
+        </div>
+      </div>
+    </button>
+    <mat-divider [vertical]="true"></mat-divider>
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Used to go in the github page"
+      (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
+    >
+      <mat-icon class="icon-x24" svgIcon="git"></mat-icon>
+    </button>
+  </div>
+</div>

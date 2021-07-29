@@ -1,0 +1,36 @@
+.icon-x24 {
+  width: 24px;
+  height: 24px;
+  transform: scale(1.5);
+}
+
+mat-icon-button {
+  width: 64px !important;
+  height: 64px !important;
+  font-size:64px !important;
+}
+
+mat-divider {
+  background-color: rgb(39, 24, 63);
+}
+
+.button-row {
+  display: table-cell;
+  width: 200px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container {
+  position: relative;
+}
+
+.overlap {
+  position: absolute;
+  top: -13px;
+  left: 8px;
+}

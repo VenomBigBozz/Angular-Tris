@@ -9,12 +9,14 @@ import { Router, NavigationEnd } from '@angular/router';
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
-  animations: [fadeInOnEnterAnimation(), fadeOutOnLeaveAnimation()],
+  animations: [
+    fadeInOnEnterAnimation({ duration: 250 }),
+    fadeOutOnLeaveAnimation({ duration: 250 }),
+  ],
 })
 export class NavBarComponent implements OnInit {
-  gameIcon: string;
-  archiveIcon: string;
-  githubIcon: string;
+  gameIconFilled: boolean;
+  leaderboardIconFilled: boolean;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
@@ -22,7 +24,6 @@ export class NavBarComponent implements OnInit {
         this.iconChange(this.router.url);
       }
     });
-    this.githubIcon = 'github-outline';
   }
 
   ngOnInit(): void {}
@@ -35,12 +36,12 @@ export class NavBarComponent implements OnInit {
   iconChange(url: string): void {
     switch (url) {
       case '/game':
-        this.gameIcon = 'plus-square';
-        this.archiveIcon = 'archive-outline';
+        this.gameIconFilled = true;
+        this.leaderboardIconFilled = false;
         break;
       case '/top':
-        this.gameIcon = 'plus-square-outline';
-        this.archiveIcon = 'archive';
+        this.gameIconFilled = false;
+        this.leaderboardIconFilled = true;
         break;
     }
   }

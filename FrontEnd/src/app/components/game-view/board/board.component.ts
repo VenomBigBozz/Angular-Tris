@@ -9,7 +9,7 @@ import {
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
   animations: [
-    fadeInOnEnterAnimation(),
+    fadeInOnEnterAnimation({ duration: 250 }),
     fadeOutOnLeaveAnimation({ duration: 250 }),
   ],
 })

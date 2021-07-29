@@ -25,7 +25,7 @@ export class SquareComponent {
         return 'cyan';
 
       default:
-        return 'light-grey';
+        return 'void';
     }
   }
 }

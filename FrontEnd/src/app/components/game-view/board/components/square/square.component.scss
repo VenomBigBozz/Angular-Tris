@@ -5,13 +5,14 @@ button {
 }
 
 .mat-flat-button.yellow {
-  background-color: rgb(0, 167, 167);
+  background-color: rgb(159, 79, 184);
 }
 
 .mat-flat-button.cyan {
   background-color: rgb(45, 83, 253);
 }
 
-.mat-flat-button.light-grey {
-  background-color: rgb(255, 255, 255);
+.mat-flat-button.void {
+  display: none;
+  background-color: rgba(255, 255, 255, 0)
 }

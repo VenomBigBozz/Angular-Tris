@@ -4,6 +4,8 @@ You can find a deployed version of the app [Here](https://ng-tris-game.web.app).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
+> **Backend has not been implemented yet.**
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
