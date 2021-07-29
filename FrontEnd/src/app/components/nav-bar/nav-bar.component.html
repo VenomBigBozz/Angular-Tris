@@ -1,25 +1,26 @@
-<nb-actions size="medium">
-  <nb-action
-    [icon]="gameIcon"
-    nbPopover="Game"
-    nbPopoverTrigger="hover"
-    nbPopoverPlacement="bottom"
-    routerLink="/game"
-    routerLinkActive="active"
-  ></nb-action>
-  <nb-action
-    [icon]="archiveIcon"
-    nbPopover="Match History"
-    nbPopoverTrigger="hover"
-    nbPopoverPlacement="bottom"
-    routerLink="/top"
-    routerLinkActive="active"
-  ></nb-action>
-  <nb-action
-    [icon]="githubIcon"
-    nbPopover="Github"
-    nbPopoverTrigger="hover"
-    nbPopoverPlacement="bottom"
-    (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
-  ></nb-action>
-</nb-actions>
+<!-- #region buttons-->
+<button
+  mat-icon-button
+  color="primary"
+  aria-label="Used to go in /game"
+  routerLink="/game"
+  routerLinkActive="active"
+>
+  <mat-icon class="material-icons-outlined">sports_esports </mat-icon></button
+><button
+  mat-icon-button
+  color="primary"
+  aria-label="Used to go in /top"
+  routerLink="/top"
+  routerLinkActive="active"
+>
+  <mat-icon class="material-icons-outlined">leaderboard </mat-icon></button
+><button
+  mat-icon-button
+  color="primary"
+  aria-label="Used to go in the github page"
+  (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
+
+><!-- https://akveo.github.io/eva-icons/outline/svg/github-outline.svg -->
+  <mat-icon class="material-icons-outlined">sports_esports </mat-icon>
+</button>
