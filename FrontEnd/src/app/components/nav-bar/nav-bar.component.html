@@ -5,6 +5,8 @@
       mat-icon-button
       color="primary"
       aria-label="Used to go in /game"
+      matTooltip="New Game"
+      [matTooltipDisabled]="gameIconFilled"
       routerLink="/game"
       routerLinkActive="active"
     >
@@ -35,6 +37,8 @@
       mat-icon-button
       color="primary"
       aria-label="Used to go in /top"
+      matTooltip="Leaderboard"
+      [matTooltipDisabled]="leaderboardIconFilled"
       routerLink="/top"
       routerLinkActive="active"
     >
@@ -65,6 +69,7 @@
       mat-icon-button
       color="primary"
       aria-label="Used to go in the github page"
+      matTooltip="Source code"
       (click)="goToLink('https://github.com/VenomBigBozz/Angular.Tris')"
     >
       <mat-icon class="icon-x24" svgIcon="git"></mat-icon>
