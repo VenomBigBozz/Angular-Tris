@@ -4,7 +4,7 @@ You can find a deployed version of the app [Here](https://ng-tris-game.web.app).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
-> **Backend has not been implemented yet.**
+> **Backend ~~has not been implemented yet~~ could work.**
 
 ## Development server
 
