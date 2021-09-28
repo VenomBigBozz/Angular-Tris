@@ -8,14 +8,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class GameViewComponent implements OnInit {
   @ViewChild(BoardComponent) board: BoardComponent;
-  vsAiPlayer: boolean = null;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   newGame(aiPlayer: boolean): void {
-    this.vsAiPlayer = aiPlayer;
     this.board.newGame(aiPlayer);
   }
 }
