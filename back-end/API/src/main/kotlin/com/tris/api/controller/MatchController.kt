@@ -5,7 +5,6 @@ import com.tris.api.repository.MatchRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.*
 import javax.validation.Valid
 
 @RestController
@@ -35,7 +34,7 @@ class MatchController(private val matchRepository: MatchRepository) {
 
         return matchRepository.findById(matchId).map { existingMatch ->
             val updatedMatch: Match = existingMatch
-                .copy(winner = newMatch.winner, date = newMatch.date)
+                .copy(winner = newMatch.winner, match_date = newMatch.match_date)
             ResponseEntity.ok().body(matchRepository.save(updatedMatch))
         }.orElse(ResponseEntity.notFound().build())
 

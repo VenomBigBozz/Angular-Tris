@@ -1,6 +1,17 @@
 <div [@fadeOutOnLeave]>
-  <h1 style="font-size: 30px" *ngIf="squares && !winner" [@fadeInOnEnter]>
+  <h1
+    style="font-size: 30px; color:cornflowerblue"
+    *ngIf="squares && !winner && !aiPlayer"
+    [@fadeInOnEnter]
+  >
     Current Player: {{ player }}
+  </h1>
+  <h1
+    style="font-size: 30px; color: darkred"
+    *ngIf="squares && !winner && aiPlayer"
+    [@fadeInOnEnter]
+  >
+    Game with AI
   </h1>
 
   <h1 *ngIf="winner && winner != 'tie'" [@fadeInOnEnter]>

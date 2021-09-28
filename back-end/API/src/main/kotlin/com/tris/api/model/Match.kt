@@ -5,15 +5,17 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.validation.constraints.NotBlank
+import java.time.LocalDate
 
 @Entity
 data class Match (
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     val id: Long = 0,
 
     @get: NotBlank
     val winner: String = "",
 
     @get: NotBlank
-    val date: String = ""
+    val match_date: LocalDate = LocalDate.now()
+
 )
