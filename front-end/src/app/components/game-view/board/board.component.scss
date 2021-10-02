@@ -1,17 +1,8 @@
-main {
-  display: grid;
-  grid-template-columns: 23vmin 23vmin 23vmin;
-  grid-gap: 0px;
-}
+$tablet-width: 1200px;
+$phone-width: 570px;
 
-app-square {
-  border: 1px solid rgb(41, 31, 77);
-  height: 23vmin;
-}
-
-app-ripple-overlay {
-  border: 1px solid rgba(60, 0, 255, 0.63);
-  height: 23vmin;
+.game-over {
+  color: #b1ceff;
 }
 
 .container {
@@ -28,4 +19,66 @@ app-ripple-overlay {
 
 .board {
   z-index: 1;
+}
+
+.ai-game {
+  color: darkred
+}
+
+.player-move {
+  color: cornflowerblue
+}
+
+p {
+  font-size: 30px;
+}
+
+main {
+  display: grid;
+
+  @media only screen and (min-width: $tablet-width) {
+    grid-template-columns: 23vmin 23vmin 23vmin;
+  }
+
+  @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
+    grid-template-columns: 16vmin 16vmin 16vmin;
+  }
+
+  @media only screen and (max-width: $phone-width) {
+    grid-template-columns: 13vmax 13vmax 13vmax;
+  }
+
+  grid-gap: 0px;
+}
+
+app-ripple-overlay {
+  border: 1px solid rgba(60, 0, 255, 0.63);
+
+  @media only screen and (min-width: $tablet-width) {
+    height: 23vmin;
+  }
+
+  @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
+    height: 16vmin;
+  }
+
+  @media only screen and (max-width: $phone-width) {
+    height: 13vmax;
+  }
+}
+
+app-square {
+  border: 1px solid rgb(41, 31, 77);
+
+  @media only screen and (min-width: $tablet-width) {
+    height: 23vmin;
+  }
+
+  @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
+    height: 16vmin;
+  }
+
+  @media only screen and (max-width: $phone-width) {
+    height: 13vmax;
+  }
 }

@@ -1,25 +1,29 @@
 <div [@fadeOutOnLeave]>
   <p
-    style="font-size: 30px; color: cornflowerblue"
-    *ngIf="squares && !winner && !aiPlayer"
+    class="player-move"
+    *ngIf="squares && !winner && !aiPlayer?.enabled"
     [@fadeInOnEnter]
   >
     Current Player: {{ player }}
   </p>
   <p
-    style="font-size: 30px; color: darkred"
-    *ngIf="squares && !winner && aiPlayer"
+    class="ai-game"
+    *ngIf="squares && !winner && aiPlayer?.enabled"
     [@fadeInOnEnter]
   >
     Game with AI
   </p>
 
-  <h1 *ngIf="winner && winner != 'tie'" [@fadeInOnEnter]>
+  <h1 class="game-over" *ngIf="winner && winner != 'tie'" [@fadeInOnEnter]>
     Player {{ winner }} won!
   </h1>
 
-  <h1 *ngIf="winner == 'tie'" [@fadeInOnEnter]>That's a tie!</h1>
+  <h1 class="game-over" *ngIf="winner == 'tie'" [@fadeInOnEnter]>
+    That's a tie!
+  </h1>
 </div>
+
+<!-- The game board -->
 <div class="container">
   <div class="overlap ripple">
     <main>

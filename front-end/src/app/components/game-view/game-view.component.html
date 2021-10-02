@@ -1,13 +1,43 @@
-<div class="new-game-button">
-  <p style="font-size: 35px">Select new Game:</p>
+<div class="game-view">
+  <div class="new-game-form">
+    <p>Select new Game:</p>
 
-  <button mat-button color="warn" (click)="newGame(true)">
-    Play against the AI (Beta)
-  </button>
+    <div class="new-game-buttons">
+      <div class="ai-settings">
+        <div>
+          <button
+            mat-button
+            color="warn"
+            (click)="newGame(true, selectedDifficulty)"
+          >
+            Play against the AI
+          </button>
+        </div>
 
-  <button mat-button color="accent" (click)="newGame(false)">
-    Play against someone
-  </button>
+        <div class="difficulty-div" style="size: 5vmin">
+          <label id="radio-label">Difficulties(?):</label>
+          <mat-radio-group
+            aria-labelledby="radio-label"
+            class="difficulty-radio-group"
+          >
+            <mat-radio-button
+              *ngFor="let difficulty of difficulties"
+              [checked]="difficulty.name === 'Ez'"
+              [value]="difficulty.difficulty"
+              (change)="setDifficulty($event)"
+              >{{ difficulty.name }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div>
+        <button mat-button color="accent" (click)="newGame(false)">
+          Play against someone
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <app-board></app-board>
 </div>
-
-<app-board></app-board>

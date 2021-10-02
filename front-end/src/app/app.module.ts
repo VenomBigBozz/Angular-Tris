@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
 
 // Service worker module
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -60,6 +61,7 @@ import { RippleOverlayComponent } from './components/game-view/board/components/
     MatIconModule,
     MatDividerModule,
     MatTooltipModule,
+    MatRadioModule,
 
     // Service worker module
     ServiceWorkerModule.register('ngsw-worker.js', {

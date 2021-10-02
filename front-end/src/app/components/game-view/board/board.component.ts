@@ -4,6 +4,7 @@ import {
   fadeInOnEnterAnimation,
   fadeOutOnLeaveAnimation,
 } from 'angular-animations';
+import { debug } from 'console';
 
 @Component({
   selector: 'app-board',
@@ -19,16 +20,21 @@ export class BoardComponent implements OnInit {
   squares2: any[];
   xIsNext: boolean;
   winner: string;
-  aiPlayer: boolean;
+  aiPlayer: { enabled: boolean; difficulty: number };
+  aiPlayerEnabled: boolean;
+  aiPlayerDifficulty: number;
 
   ngOnInit(): void {}
 
-  newGame(aiPlayer: boolean): void {
+  newGame(aiPlayerEnabled: boolean, aiDifficulty?: number): void {
     this.squares = Array(9).fill(null);
     this.squares2 = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
-    this.aiPlayer = aiPlayer;
+    this.aiPlayer = {
+      enabled: aiPlayerEnabled ? aiPlayerEnabled : false,
+      difficulty: aiDifficulty ? aiDifficulty : 1,
+    };
   }
 
   get player(): string {
@@ -38,13 +44,46 @@ export class BoardComponent implements OnInit {
   makeMove(idx: number): void {
     if (!this.squares[idx] && !this.winner) {
       this.squares[idx] = this.player;
-      if (this.aiPlayer) {
-        this.squares[this.aiMove()] = 'O';
+      this.winner = this.checkWinner(this.squares);
+      if (this.aiPlayer?.enabled && !this.winner) {
+        this.squares[this.aiMove(this.aiPlayer?.difficulty)] = 'O';
       } else {
         this.xIsNext = !this.xIsNext;
       }
     }
     this.winner = this.checkWinner(this.squares);
+  }
+
+  // The move of the computer is selected by looking for the best scenario
+  aiMove(aiPlayerDifficulty: number): number {
+    const persons: { idDifficulty: number; difficultyChance: number }[] = [
+      { idDifficulty: 1, difficultyChance: 85 }, // Wrong chance rate
+      { idDifficulty: 2, difficultyChance: 50 },
+      { idDifficulty: 3, difficultyChance: 20 },
+      { idDifficulty: 4, difficultyChance: 1 }, // Even the gods can make mistakes
+    ];
+    const board = this.squares;
+    let idxMove: number;
+    let bestScore = -Infinity;
+    board.forEach((element, index) => {
+      if (element === null) {
+        board[index] = 'O';
+        let score = this.minimax(board, false);
+        board[index] = null;
+        if (score > bestScore) {
+          let min = Math.ceil(1);
+          let max = Math.floor(100);
+          let random = Math.floor(Math.random() * (max - min) + min);
+          if (random <= persons[aiPlayerDifficulty]?.difficultyChance) {
+            score += random % 2 === 0 ? 10 : -10;
+          }
+          bestScore = score;
+          idxMove = index;
+        }
+      }
+    });
+
+    return idxMove;
   }
 
   checkWinner(board: any[]): any {
@@ -69,24 +108,6 @@ export class BoardComponent implements OnInit {
       filled += element ? 1 : 0;
     });
     return filled >= 9 ? 'tie' : null;
-  }
-
-  aiMove(): number {
-    let board = this.squares;
-    let idxBestMove: number;
-    let bestScore = -Infinity;
-    board.forEach((element, index) => {
-      if (element === null) {
-        board[index] = 'O';
-        let score = this.minimax(board, false);
-        board[index] = null;
-        if (score > bestScore) {
-          bestScore = score;
-          idxBestMove = index;
-        }
-      }
-    });
-    return idxBestMove;
   }
 
   minimax(board: any[], isMaximizing: boolean, depth: number = 0): number {
