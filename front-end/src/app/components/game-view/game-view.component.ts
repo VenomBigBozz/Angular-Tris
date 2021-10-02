@@ -30,7 +30,7 @@ export class GameViewComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  setDifficulty(radioChange: MatRadioChange) {
+  setDifficulty(radioChange: MatRadioChange): void {
     this.selectedDifficulty = radioChange.value;
   }
 

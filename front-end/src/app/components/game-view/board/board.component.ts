@@ -4,7 +4,6 @@ import {
   fadeInOnEnterAnimation,
   fadeOutOnLeaveAnimation,
 } from 'angular-animations';
-import { debug } from 'console';
 
 @Component({
   selector: 'app-board',
@@ -21,8 +20,6 @@ export class BoardComponent implements OnInit {
   xIsNext: boolean;
   winner: string;
   aiPlayer: { enabled: boolean; difficulty: number };
-  aiPlayerEnabled: boolean;
-  aiPlayerDifficulty: number;
 
   ngOnInit(): void {}
 

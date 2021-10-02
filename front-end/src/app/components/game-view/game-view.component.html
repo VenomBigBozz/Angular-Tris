@@ -21,11 +21,11 @@
             class="difficulty-radio-group"
           >
             <mat-radio-button
-              *ngFor="let difficulty of difficulties"
-              [checked]="difficulty.name === 'Ez'"
-              [value]="difficulty.difficulty"
+              *ngFor="let radioDifficulty of difficulties"
+              [checked]="radioDifficulty.name === 'Ez'"
+              [value]="radioDifficulty.difficulty"
               (change)="setDifficulty($event)"
-              >{{ difficulty.name }}
+              >{{ radioDifficulty.name }}
             </mat-radio-button>
           </mat-radio-group>
         </div>
