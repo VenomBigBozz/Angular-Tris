@@ -37,7 +37,7 @@ main {
   display: grid;
 
   @media only screen and (min-width: $tablet-width) {
-    grid-template-columns: 23vmin 23vmin 23vmin;
+    grid-template-columns: 20vmin 20vmin 20vmin;
   }
 
   @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
@@ -55,7 +55,7 @@ app-ripple-overlay {
   border: 1px solid rgba(60, 0, 255, 0.63);
 
   @media only screen and (min-width: $tablet-width) {
-    height: 23vmin;
+    height: 20vmin;
   }
 
   @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
@@ -71,7 +71,7 @@ app-square {
   border: 1px solid rgb(41, 31, 77);
 
   @media only screen and (min-width: $tablet-width) {
-    height: 23vmin;
+    height: 20vmin;
   }
 
   @media only screen and (max-width: $tablet-width) and (min-width: $phone-width) {
