@@ -1,16 +1,73 @@
 image: node:latest
+stages:
+  - install
+  - test
+  - build
+  - deploy
 
-pages:
+install-dependencies:
+  stage: install
+  script:
+    - npm install
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - node_modules/
   cache:
     paths:
       - node_modules/
+
+test-apps:
+  stage: test
+  variables:
+    CHROME_BIN: google-chrome
+  dependencies:
+    - install-dependencies
+  before_script:
+    # - apt-get update && apt-get install -y apt-transport-https
+    # - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    # - sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/app/sources.list.d/google.list'
+    # # - apt-get update && apt-get install -y google-chrome-stable
+    # - set -x && apt-get update && apt-get install -y xvfb google-chrome-stable
+    - apt-get update && apt-get install -y apt-transport-https
+    - echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/chrome.list
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - set -x && apt-get update && apt-get install -y xvfb google-chrome-stable
+  script:
+    - npm run test:ci
+
+
+build-app:
+  stage: build
+  variables:
+    BUILD_CONFIGURATION: 'production'
+  dependencies:
+    - install-dependencies
   script:
     - npm install -g @angular/cli@13.0.3
-    - npm install
-    - npm run buildProd
+    - npm run build
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - dist/
+
+
+pages:
+  stage: deploy
+  dependencies:
+    - build-app
+  script:
+    - mkdir public
+    - pwd
+    - ls -l
+    - mv ./dist/proyect-devops/* ./public/
+    - cd ./public/
+    - ls -l
+
   artifacts:
     paths:
-      - public
+    - public
+  environment:
+    name: production
   only:
-    - master
-    - pages
+    - branches
