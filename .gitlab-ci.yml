@@ -1,4 +1,5 @@
-image: node:16.13.0
+image: node:latest
+
 pages:
   cache:
     paths:
