@@ -1,6 +1,6 @@
 # NgTrisGame
 
-You can find a deployed version of the app hosted in [Firebase](https://ng-tris-game.web.app) and [Gitlab](venombigbozz.gitlab.io/Angular-Tris).
+You can find a deployed version of the app hosted in [Firebase](https://ng-tris-game.web.app) and [Gitlab](https://venombigbozz.gitlab.io/Angular-Tris/game).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
