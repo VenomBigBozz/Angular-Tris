@@ -45,7 +45,7 @@ build-app:
     - install-dependencies
   script:
     - npm install -g @angular/cli@13.0.3
-    - npm run build
+    - npm run buildProd
   artifacts:
     expire_in: 1hr
     paths:
