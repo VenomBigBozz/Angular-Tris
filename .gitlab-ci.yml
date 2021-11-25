@@ -60,7 +60,7 @@ pages:
     - mkdir public
     - pwd
     - ls -l
-    - mv ./dist/proyect-devops/* ./public/
+    - mv ./dist/ng-tris-game/* ./public/
     - cd ./public/
     - ls -l
 
