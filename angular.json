@@ -33,7 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "serviceWorker": true,
+            "serviceWorker": false,
             "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
@@ -63,7 +63,7 @@
                   "maximumError": "10kb"
                 }
               ],
-              "serviceWorker": true,
+              "serviceWorker": false,
               "ngswConfigPath": "ngsw-config.json"
             },
             "hmr": {
