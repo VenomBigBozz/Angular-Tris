@@ -63,7 +63,6 @@ pages:
     - mv ./dist/ng-tris-game/* ./public/
     - cd ./public/
     - ls -l
-
   artifacts:
     paths:
     - public
