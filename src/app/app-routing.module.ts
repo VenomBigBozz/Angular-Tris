@@ -5,9 +5,8 @@ import { TopViewComponent } from './components/top-view/top-view.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'game', component: GameViewComponent },
+  { path: '', component: GameViewComponent },
   { path: 'top', component: TopViewComponent },
-  { path: '', redirectTo: '/game', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
