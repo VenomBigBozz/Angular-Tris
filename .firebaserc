@@ -3,7 +3,7 @@
     "ng-tris-game": {
       "hosting": {
         "ng-tris-game": [
-          "ng-tris-game"
+          "tris-ng"
         ]
       }
     }

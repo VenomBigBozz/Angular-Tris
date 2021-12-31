@@ -35,7 +35,7 @@ export class NavBarComponent implements OnInit {
 
   iconChange(url: string): void {
     switch (url) {
-      case '/game':
+      case '/':
         this.gameIconFilled = true;
         this.leaderboardIconFilled = false;
         break;

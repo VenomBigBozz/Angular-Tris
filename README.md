@@ -4,7 +4,7 @@ You can find a deployed version of the app hosted in [Firebase](https://tris-ng.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
 
-> **Backend ~~has not been implemented yet~~ could work.**
+> **Backend has not been implemented yet.**
 
 ## Development server
 
