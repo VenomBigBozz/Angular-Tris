@@ -1,26 +1,19 @@
-<div [@fadeOutOnLeave]>
+<div class="text" [@inOutAnimation]>
   <p
     class="player-move"
     *ngIf="squares && !winner && !aiPlayer?.enabled"
-    [@fadeInOnEnter]
   >
     Current Player: {{ player }}
   </p>
-  <p
-    class="ai-game"
-    *ngIf="squares && !winner && aiPlayer?.enabled"
-    [@fadeInOnEnter]
-  >
+  <p class="ai-game" *ngIf="squares && !winner && aiPlayer?.enabled">
     Game with AI
   </p>
 
-  <h1 class="game-over" *ngIf="winner && winner != 'tie'" [@fadeInOnEnter]>
+  <h1 class="game-over" *ngIf="winner && winner != 'tie'">
     Player {{ winner }} won!
   </h1>
 
-  <h1 class="game-over" *ngIf="winner == 'tie'" [@fadeInOnEnter]>
-    That's a tie!
-  </h1>
+  <h1 class="game-over" *ngIf="winner == 'tie'">That's a tie!</h1>
 </div>
 
 <!-- The game board -->

@@ -60,7 +60,7 @@ pages:
     - mkdir public
     - pwd
     - ls -l
-    - mv ./dist/ng-tris-game/* ./public/
+    - mv ./dist/Angular-Tris/* ./public/
     - cd ./public/
     - ls -l
   artifacts:

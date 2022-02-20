@@ -1,3 +1,4 @@
+import { fadeAnimation } from './animations/animation';
 import {
   state,
   trigger,
@@ -13,19 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('inOutAnimation', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [
-        style({ opacity: '0' }),
-        animate('.5s ease-out', style({ opacity: '1' })),
-      ]),
-      transition(':leave', [
-        style({ opacity: '1' }),
-        animate('.5s ease-out', style({ opacity: '0' })),
-      ]),
-    ]),
-  ],
+  animations: [fadeAnimation],
 })
 export class AppComponent {
   title = 'tris';
@@ -37,7 +26,7 @@ export class AppComponent {
     this.matIconRegistry.addSvgIcon(
       `git`,
       this.domSanitizer.bypassSecurityTrustResourceUrl(
-        `../assets/icons/github-outline.svg`
+        `../assets/icons/filled_circle_github.svg`
       )
     );
   }

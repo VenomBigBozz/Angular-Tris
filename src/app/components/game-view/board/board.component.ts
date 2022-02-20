@@ -1,32 +1,25 @@
-import { element } from 'protractor';
-import { Component, OnInit } from '@angular/core';
-import {
-  fadeInOnEnterAnimation,
-  fadeOutOnLeaveAnimation,
-} from 'angular-animations';
+import { fadeAnimation, slideAnimation } from './../../../animations/animation';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
-  animations: [
-    fadeInOnEnterAnimation({ duration: 250 }),
-    fadeOutOnLeaveAnimation({ duration: 250 }),
-  ],
+  animations: [fadeAnimation, slideAnimation],
 })
-export class BoardComponent implements OnInit {
-  squares: any[];
-  squares2: any[];
-  xIsNext: boolean;
-  winner: string;
-  aiPlayer: { enabled: boolean; difficulty: number };
-
-  ngOnInit(): void {}
+export class BoardComponent {
+  squares!: any[];
+  squares2!: any[];
+  xIsNext!: boolean;
+  winner!: string;
+  aiPlayer!: { enabled: boolean; difficulty: number };
+  matchStart = false;
 
   newGame(aiPlayerEnabled: boolean, aiDifficulty?: number): void {
+    this.matchStart = true;
     this.squares = Array(9).fill(null);
     this.squares2 = Array(9).fill(null);
-    this.winner = null;
+    this.winner = '';
     this.xIsNext = true;
     this.aiPlayer = {
       enabled: aiPlayerEnabled ? aiPlayerEnabled : false,
@@ -60,7 +53,7 @@ export class BoardComponent implements OnInit {
       { idDifficulty: 4, difficultyChance: 1 }, // Even the gods can make mistakes
     ];
     const board = this.squares;
-    let idxMove: number;
+    let idxMove: number = 0;
     let bestScore = -Infinity;
     board.forEach((element, index) => {
       if (element === null) {
@@ -94,7 +87,7 @@ export class BoardComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    let filled = null;
+    let filled: number = 0;
     for (const [a, b, c] of lines) {
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         // If there is a winner the player symbol is returned
@@ -109,7 +102,7 @@ export class BoardComponent implements OnInit {
 
   minimax(board: any[], isMaximizing: boolean, depth: number = 0): number {
     const scores = { X: -10, O: 10, tie: 0 };
-    const result = this.checkWinner(board);
+    const result: keyof typeof scores = this.checkWinner(board);
     if (result !== null) {
       return scores[result];
     }

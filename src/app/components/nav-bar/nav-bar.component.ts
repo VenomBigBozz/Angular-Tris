@@ -1,7 +1,4 @@
-import {
-  fadeInOnEnterAnimation,
-  fadeOutOnLeaveAnimation,
-} from 'angular-animations';
+import { fadeAnimation } from './../../animations/animation';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -9,14 +6,11 @@ import { Router, NavigationEnd } from '@angular/router';
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
-  animations: [
-    fadeInOnEnterAnimation({ duration: 250 }),
-    fadeOutOnLeaveAnimation({ duration: 250 }),
-  ],
+  animations: [fadeAnimation],
 })
 export class NavBarComponent implements OnInit {
-  gameIconFilled: boolean;
-  leaderboardIconFilled: boolean;
+  gameIconFilled!: boolean;
+  leaderboardIconFilled!: boolean;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {

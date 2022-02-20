@@ -17,7 +17,7 @@ import {
   ],
 })
 export class GameViewComponent implements OnInit {
-  @ViewChild(BoardComponent) board: BoardComponent;
+  @ViewChild(BoardComponent) board!: BoardComponent;
   difficulties = [
     { name: 'Ez', difficulty: 1 },
     { name: '50% of his power', difficulty: 2 },
