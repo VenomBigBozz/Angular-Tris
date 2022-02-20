@@ -35,6 +35,7 @@ speed-measure-plugin*.json
 # Firebase
 .firebase
 .editorconfig
+firebase-debug.log
 
 # misc
 /.sass-cache
