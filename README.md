@@ -1,6 +1,6 @@
 # AngularTris
 
-You can find a deployed version of the app hosted in [Firebase](https://tris-ng.web.app/) and [Gitlab](https://venombigbozz.gitlab.io/Angular-Tris/).
+You can find a deployed version of the app hosted in [Firebase](https://tris-angular.web.app/) and [Gitlab](https://venombigbozz.gitlab.io/Angular-Tris/).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
