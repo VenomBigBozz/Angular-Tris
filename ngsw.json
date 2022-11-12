@@ -1,0 +1,67 @@
+{
+  "configVersion": 1,
+  "timestamp": 1668251658106,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.bd2c68f142bccc2c.js",
+        "/manifest.webmanifest",
+        "/polyfills.2415baf658225aac.js",
+        "/runtime.bd9d2c8767ffdca9.js",
+        "/styles.898bc34bb0d5b708.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/filled_circle_github.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/filled_circle_github.svg": "3420685ee0ed16b620f8f53a2c1fdd23ef1d92c0",
+    "/favicon.ico": "05665402896052761516607b3d3180f0d2d95b75",
+    "/index.html": "bf0240dec1fb838db7f4bb0c6d15ed48b306efc4",
+    "/main.bd2c68f142bccc2c.js": "d33b6f5ebe4a3ae3e4635ff87e0e62d2dfc53df4",
+    "/manifest.webmanifest": "dc6692a8edae6339a6078e23037bc6b2325c707c",
+    "/polyfills.2415baf658225aac.js": "589a6613a0f94bb98359b27dfcf99c43cd9e705f",
+    "/runtime.bd9d2c8767ffdca9.js": "0d236228ec371304e2b76a3e7c2114e7d829fcf6",
+    "/styles.898bc34bb0d5b708.css": "d4f0416dec43259137dcec58116fc8036abaa48b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
