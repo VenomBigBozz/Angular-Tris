@@ -18,11 +18,13 @@ import {
 })
 export class GameViewComponent implements OnInit {
   @ViewChild(BoardComponent) board!: BoardComponent;
-  difficulties = [
+
+  // The difficulties are actually poorly implemented
+  public difficulties = [
     { name: 'Ez', difficulty: 1 },
     { name: '50% of his power', difficulty: 2 },
     { name: 'Strong', difficulty: 3 },
-    { name: 'God', difficulty: 4 },
+    { name: 'Tie', difficulty: 4 },
   ];
   selectedDifficulty = 1;
 
